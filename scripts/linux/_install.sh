@@ -9,7 +9,7 @@ _download() {
 	if [ -f "$LINUX/.git" ]; then
 		return 0
 	fi
-	git submodule update --init "$LINUX"
+	git submodule update --progress --init "$LINUX" # 显示进度
 }
 
 _build() {
