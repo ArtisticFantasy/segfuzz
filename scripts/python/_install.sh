@@ -28,8 +28,8 @@ _install() {
 							"ln -s $PYTHON_INSTALL/bin/python3 $PYTHON_INSTALL/bin/python" \
 							"python -m venv $PYTHON_VIRTENV_PATH" \
 							". $PYTHON_VIRTENV_ACTIVATE" \
-							"$_PIP install --upgrade pip" \
-							"$_PIP install -r $SCRIPTS_DIR/python/requirements.txt"
+							"$_PIP install --upgrade pip -i https://pypi.tuna.tsinghua.edu.cn/simple/" \ #换源
+							"$_PIP install -r $SCRIPTS_DIR/python/requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple/" #换源
 }
 
 _target="python-$PYTHON_VERSION"
