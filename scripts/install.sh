@@ -44,10 +44,25 @@ __install_tool() {
 }
 
 __install_tools() {
-	for _PROJ in `find $SCRIPTS_DIR -mindepth 1 -maxdepth 1 -type d -exec test -e "{}/$1" \; -print`;
-	do
-		__install_tool $_PROJ
-	done
+	#手动规定顺序
+	__install_tool $SCRIPTS_DIR/linux
+	__install_tool $SCRIPTS_DIR/meson
+	__install_tool $SCRIPTS_DIR/cmake
+	__install_tool $SCRIPTS_DIR/ninja
+	__install_tool $SCRIPTS_DIR/gcc
+	__install_tool $SCRIPTS_DIR/python
+	__install_tool $SCRIPTS_DIR/go
+	__install_tool $SCRIPTS_DIR/llvm
+	__install_tool $SCRIPTS_DIR/capstone
+	__install_tool $SCRIPTS_DIR/dwarves
+	__install_tool $SCRIPTS_DIR/misc
+	__install_tool $SCRIPTS_DIR/segfuzz
+	__install_tool $SCRIPTS_DIR/qemu
+	__install_tool $SCRIPTS_DIR/exp
+	#for _PROJ in `find $SCRIPTS_DIR -mindepth 1 -maxdepth 1 -type d -exec test -e "{}/$1" \; -print`;
+	#do
+	#	__install_tool $_PROJ
+	#done
 }
 
 # Install a speicified tool/toolchains
