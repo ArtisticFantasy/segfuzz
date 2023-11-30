@@ -8,7 +8,7 @@ _F="$GO_VERSION.linux-amd64.tar.gz"
 _DST="$TMP_DIR/$_F"
 
 _download() {
-	URL="http://golang.org/dl/$_F"
+	URL="https://golang.org/dl/$_F"
 	wget "$URL" -O "$_DST"
 }
 
