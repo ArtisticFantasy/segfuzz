@@ -144,7 +144,7 @@ fi
 if [ $DEBARCH == "riscv64" ]; then
     DEBOOTSTRAP_PARAMS="--keyring /usr/share/keyrings/debian-ports-archive-keyring.gpg --exclude firmware-atheros $DEBOOTSTRAP_PARAMS http://deb.debian.org/debian-ports"
 fi
-sudo debootstrap $DEBOOTSTRAP_PARAMS
+sudo debootstrap $DEBOOTSTRAP_PARAMS https://mirrors.tuna.tsinghua.edu.cn/debian/ # 使用清华源
 
 # 2. debootstrap stage: only necessary if target != host architecture
 
