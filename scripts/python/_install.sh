@@ -9,7 +9,7 @@ _DST="$TMP_DIR/$_F"
 
 _download() {
 	URL="https://www.python.org/ftp/python/$PYTHON_VERSION/Python-$PYTHON_VERSION.tar.xz"
-	wget "$URL" -O "$_DST"
+	wget "$URL" -O "$_DST" -e "https_proxy=https://192.168.134.1:7890"
 }
 
 _build() {
@@ -28,8 +28,8 @@ _install() {
 							"ln -s $PYTHON_INSTALL/bin/python3 $PYTHON_INSTALL/bin/python" \
 							"python -m venv $PYTHON_VIRTENV_PATH" \
 							". $PYTHON_VIRTENV_ACTIVATE" \
-							"$_PIP install --upgrade pip -i https://pypi.tuna.tsinghua.edu.cn/simple/" \ #换源
-							"$_PIP install -r $SCRIPTS_DIR/python/requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple/" #换源
+							"$_PIP install --upgrade pip -i https://pypi.tuna.tsinghua.edu.cn/simple/" \
+							"$_PIP install -r $SCRIPTS_DIR/python/requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple/"
 }
 
 _target="python-$PYTHON_VERSION"
